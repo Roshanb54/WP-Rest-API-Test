@@ -31,3 +31,8 @@ for (i=0;i<postData.length;i++){
     relatedPostContainer.innerHTML=ourHTMLString;
 
 }
+
+
+//Quick blog post AJAX
+
+var quickAddBtn=document.getElementById('quick-add-button');
