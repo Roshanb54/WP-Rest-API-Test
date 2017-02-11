@@ -5,7 +5,7 @@ var relatedPostContainer=document.getElementById('related-post-container');
 if(relatedPostBtn){
     relatedPostBtn.addEventListener('click',function () {
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET','http://localhost/plugintest/wp-json/wp/v2/posts');
+        ourRequest.open('GET',magicalData.siteURL +'/wp-json/wp/v2/posts');
         ourRequest.onload=function () {
             if (ourRequest.status>=200 && ourRequest.status<400){
                 var data = JSON.parse(ourRequest.responseText);
@@ -47,7 +47,7 @@ if(quickAddBtn){
         }
 
         var createPost=new XMLHttpRequest();
-        createPost.open('POST','http://localhost/plugintest/wp-json/wp/v2/posts');
+        createPost.open('POST',magicalData.siteURL +'/wp-json/wp/v2/posts');
         createPost.setRequestHeader('X-WP-Nonce' , magicalData.nonce);
         createPost.setRequestHeader('Content-Type','application/json;Charset=UTF-8');
         createPost.send(JSON.stringify(ourPostData));
