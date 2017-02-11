@@ -1,0 +1,24 @@
+//function enqueue script
+wp_enqueue_script('main_js',get_template_directory_uri().'/assets/js/main.js',NULL,'1.0.0',true );
+
+    wp_localize_script('main_js', 'magicalData', array(
+        'nonce' => wp_create_nonce('wp_rest'),
+        'siteURL' => get_site_url()
+    ));
+
+
+//load more post button
+<button id="related-post-btn">Load More Related Posts</button>
+<div id="related-post-container"></div>
+
+
+//Create a post from front page 
+
+/*<?php if(current_user_can('administrator')):?>
+ <div class="admin-quick-add">
+ <h3>Quick Add Post</h3>
+ <input type="text" name="title" placeholder="Title">
+ <textarea name="content" placeholder="Content"></textarea>
+ <button id="quick-add-button">Create Post</button>
+ </div>
+ <?php endif; ?>*/
